@@ -176,9 +176,11 @@ def main(subj_names=list(offset_dict.keys()), recipe='Brownie', labels_dir='../d
     
     df = df.sort_values(by=['narration_ids'])
     df.to_csv('cmu_retrieval_test.csv')
+    df.to_pickle('cmu_retrieval_test.pkl')
 
     df_sentence = df.drop_duplicates(subset=['narration'],keep='first')[['narration_ids','narration']]
     df_sentence.to_csv('cmu_retrieval_test_sentence.csv')
+    df_sentence.to_pickle('cmu_retrieval_test_sentence.pkl')
 
 
 if __name__ == "__main__":
